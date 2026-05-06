@@ -1,13 +1,21 @@
 [
   {
-    "id": "test",
-    "name": "Test Creator",
-    "description": "This is a test creator.",
-    "avatar": "https://picsum.photos/800/800",
+    "id": "mmmm",
+    "name": "まもまも",
+    "description": "19歳、学生（もしくはみかん）です。特にはやってませんが、プログラミングとかが好きです。電車乗って色んなところ行くのも好きです。柑橘系VTuberもやってます。",
+    "avatar": "/img/ahozura.png",
     "socials": [
       {
         "icon": "fa:twitter",
-        "url": "https://twitter.com/testcreator"
+        "url": "https://twitter.com/kunkunmaamo"
+      },
+      {
+        "icon": "fa:youtube",
+        "url": "https://youtube.com/@maamokun"
+      },
+      {
+        "icon": "fa:github",
+        "url": "https://github.com/maamokun"
       }
     ]
   }

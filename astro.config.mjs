@@ -13,7 +13,7 @@ import react from "@astrojs/react";
 
 // https://astro.build/config
 export default defineConfig({
-  site: "https://mayu.mikn.dev",
+  site: "https://log.mamomamo.live",
   integrations: [pagefind(), icon(), mdx(), sitemap(), react()],
   vite: {
     plugins: [tailwindcss()],

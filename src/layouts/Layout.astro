@@ -5,8 +5,7 @@ import { Font } from "astro:assets"
 import Footer from "@/components/navigation/footer.astro"
 import Header from "@/components/navigation/header"
 
-import logo from "@/assets/img/mikandevlogo.png"
-import mayuLogo from "@/assets/img/mayu.png"
+import logo from "@/assets/img/mamolog.png"
 
 interface Props {
 	title?: string;
@@ -28,17 +27,6 @@ const absoluteImage = image && Astro.site ? new URL(image, Astro.site).href : im
 const headerMenu = [
 	{
 		topLink: { title: "Home", url: "/" }
-	},
-	{
-		topLink: { title: "Blog", url: "/blog" },
-		links: [
-			{ title: "All Posts", url: "/blog" },
-			{ title: "Categories", url: "/categories" },
-			{ title: "Tags", url: "/tags" }
-		]
-	},
-	{
-		topLink: { title: "About", url: "/about" }
 	}
 ];
 ---
@@ -71,11 +59,11 @@ const headerMenu = [
 		{absoluteImage && <meta property="twitter:image" content={absoluteImage} />}
 	</head>
 	<body>
-		<Header client:load topTitle="Astro無料テーマ" image={mayuLogo.src} menu={headerMenu} />
+		<Header client:load topTitle="なんだこの自己満ブログ" image={logo.src} menu={headerMenu} />
 		<main class="pt-5">
 			<slot />
 		</main>
-		<Footer copyright={`© ${new Date().getFullYear()} MikanDev`} image={logo.src} links={[{ title: "GitHub", href: "https://github.com/mikndotdev/mayu" }]}/>
+		<Footer copyright={`© ${new Date().getFullYear()} mamomamo`} image={logo.src} links={[{ title: "GitHub", href: "https://github.com/maamokun/mamolog" }]}/>
 	</body>
 </html>
 
