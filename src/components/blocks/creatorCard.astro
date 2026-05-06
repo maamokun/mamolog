@@ -1,0 +1,27 @@
+---
+import CreatorCardPrimitive from "@/components/primitives/creatorCard.astro";
+import type { ComponentProps } from "astro/types";
+import creators from "@/creators.json";
+
+interface Props {
+    id: string;
+    variant?: ComponentProps<typeof CreatorCardPrimitive>["variant"];
+}
+
+const { id, variant } = Astro.props;
+
+const creator = creators.find((c) => c.id === id);
+
+if (!creator) {
+    throw new Error(`Creator with id "${id}" not found`);
+}
+---
+
+<CreatorCardPrimitive
+    id={creator.id}
+    name={creator.name}
+    description={creator.description}
+    avatar={creator.avatar}
+    socials={creator.socials}
+    variant={variant}
+/>

@@ -1,0 +1,67 @@
+---
+import Layout from "@/layouts/Layout.astro"
+
+import ShareButtons from "@/components/blocks/shareButtons.astro";
+import CoverImage from "@/components/blocks/coverImage.astro";
+import TimeToRead from "@/components/blocks/timeToRead.astro";
+import CreatorCard from "@/components/blocks/creatorCard.astro";
+import SidebarContent from "@/components/blocks/sidebarContent.astro";
+import MobileMenu from "@/components/navigation/mobileMenu";
+import { Icon } from "astro-icon/components";
+
+import { getCollection, render } from 'astro:content';
+export async function getStaticPaths() {
+    const posts = await getCollection('blog');
+    return posts.map(post => ({
+        params: { id: post.id },
+        props: { post },
+    }));
+}
+
+const { post } = Astro.props;
+const { Content } = await render(post);
+
+const allPosts = await getCollection('blog');
+const recentPosts = allPosts
+    .filter(p => p.id !== post.id)
+    .sort((a, b) => b.data.date.getTime() - a.data.date.getTime())
+    .slice(0, 5);
+---
+<Layout
+    title={post.data.title}
+    description={post.data.description}
+    image={post.data.coverImage}
+    url={Astro.url.pathname}
+>
+<div class="flex flex-row justify-center items-stretch w-full md:w-2/3 min-h-screen mx-auto md:space-x-5 py-5">
+    <div class="w-full md:w-3/4 bg-white px-5 py-10">
+        <h1 class="text-3xl font-bold mb-4">{post.data.title}</h1>
+        <CoverImage imageUrl={post.data.coverImage} tags={post.data.tags} />
+        <ShareButtons platforms={["twitter", "line", "hatebu", "bluesky", "copy"]} />
+        <div class="flex justify-end items-center gap-2 mt-4 text-(--pallid-text-color)">
+            <Icon name="fa7-solid:clock" class="w-4 h-4" />
+            <span class="text-sm">{post.data.date.toLocaleDateString("ja-JP")}</span>
+        </div>
+        <TimeToRead minutes={post.data.timeToRead} />
+        <div class="markdown-content">
+            <Content/>
+        </div>
+        {post.data.creator && (
+            <div class="mt-8">
+                <CreatorCard id={post.data.creator} variant="blue" />
+            </div>
+        )}
+    </div>
+    <div class="hidden md:block w-1/4 bg-gray-200">
+        <div class="sticky top-5 max-h-[calc(100vh-2.5rem)] overflow-y-auto">
+            <SidebarContent recentPosts={recentPosts} />
+        </div>
+    </div>
+</div>
+
+<div id="mobile-sidebar-content" class="hidden">
+    <SidebarContent recentPosts={recentPosts} />
+</div>
+
+<MobileMenu client:load />
+</Layout>

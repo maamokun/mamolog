@@ -1,0 +1,22 @@
+---
+import mayuLogo from "@/assets/img/mayu.png"
+import mikandevLogo from "@/assets/img/mikandevlogo.png"
+
+import { Image } from "astro:assets"
+---
+
+<div class="h-screen flex flex-col justify-center items-center">
+	<div class="flex flex-row items-center justify-center space-x-10">
+	<Image src={mayuLogo} alt="Mayu Logo" class="w-auto h-1/8" />
+	<span class="text-white font-bold text-4xl">by</span>
+	<Image src={mikandevLogo} alt="MikanDev Logo" class="w-auto h-1/8" />
+	</div>
+	<div class="flex flex-row items-center justify-center space-x-4">
+	<code>src/index.astro</code>
+	<span class="text-white font-bold">を編集してみよう！</span>
+	</div>
+	<div class="flex flex-row items-center justify-center space-x-4 my-2">
+		<code>src/content</code>
+		<span class="text-white font-bold">でブログの記事を追加できます。</span>
+	</div>
+</div>

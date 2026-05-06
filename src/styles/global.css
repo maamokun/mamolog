@@ -1,0 +1,291 @@
+@import "tailwindcss";
+
+:root {
+  --twitter-color: #000000;
+  --mastodon-color: #6364ff;
+  --bluesky-color: #0085ff;
+  --misskey-color: #96d04a;
+  --facebook-color: #3b5998;
+  --threads-color: #000000;
+  --hatebu-color: #2c6ebd;
+  --line-color: #00c300;
+  --line-chat-color: #85e249;
+  --linkedin-color: #0077b5;
+  --website-color: #002561;
+  --instagram-color: #405de6;
+  --pinterest-color: #bd081c;
+  --youtube-color: #cd201f;
+  --tiktok-color: #000000;
+  --note-color: #41c9b4;
+  --soundcloud-color: #ff8800;
+  --flickr-color: #111;
+  --amazon-color: #ff9900;
+  --twitch-color: #6441a4;
+  --rakuten-color: #bf0000;
+  --rakuten-room-color: #c61e79;
+  --slack-color: #e01563;
+  --github-color: #4078c0;
+  --codepen-color: #333;
+  --feedly-color: #2bb24c;
+  --rss-color: #f26522;
+  --copy-color: #333333;
+  --comment-color: #333333;
+  --red-color: #e60033;
+  --pink-color: #e95295;
+  --purple-color: #884898;
+  --deep-color: #55295b;
+  --indigo-color: #1e50a2;
+  --blue-color: #0095d9;
+  --light-blue-color: #2ca9e1;
+  --cyan-color: #00a3af;
+  --teal-color: #007b43;
+  --green-color: #3eb370;
+  --light-green-color: #8bc34a;
+  --lime-color: #c3d825;
+  --yellow-color: #ffd900;
+  --amber-color: #ffc107;
+  --orange-color: #f39800;
+  --deep-orange-color: #ea5506;
+  --brown-color: #954e2a;
+  --light-grey-color: #cccccc;
+  --grey-color: #949495;
+  --dark-grey-color: #666666;
+  --blue-gray-color: #607d8b;
+  --black-color: #333333;
+  --white-color: #ffffff;
+  --watery-blue-color: #f3fafe;
+  --watery-yellow-color: #fff7cc;
+  --watery-red-color: #fdf2f2;
+  --watery-green-color: #ebf8f4;
+  --custom-background-color: #f1f1f1;
+  --custom-text-color: #333;
+  --custom-border-color: #ccc;
+  --text-color: #333;
+  --pallid-text-color: #777;
+  --x-pallid-text-color: #999;
+  --default-text-size: 18px;
+  --text-size-s: 0.8em;
+  --basic-border-color: #ccc;
+  --three-d-border-colors: #e3e3e3 #cecece #b4b4b4 #d6d6d6;
+  --middle-thickness-color: #888;
+  --thin-color: #ddd;
+  --x-thin-color: #eee;
+  --xx-thin-color: #f5f6f7;
+  --xxx-thin-color: #fafbfc;
+  --current-background-color: #eee;
+  --select-background-color: #d8eaf2;
+  --tab-label-color: #f2f2f2;
+  --tab-label-active-color: #404453;
+  --basic-border-radius: 4px;
+  --badge-border-radius: 2px;
+  --middle-border-radius: 8px;
+  --box-padding: 1em 1.5em;
+  --list-padding: min(1%, 8px) min(2%, 16px) min(1%, 8px) min(3%, 24px);
+  --list-wide-padding: min(3%, 24px) min(5%, 40px) min(3%, 24px) min(7%, 56px);
+  --box-border-color: #47585c;
+  --sns-color: var(--text-color);
+  --card-ratio: 16/9;
+  ---header-container--position-offset: 0px;
+}
+
+body {
+  background-color: var(--blue-gray-color);
+}
+
+.markdown-content {
+  color: var(--text-color);
+  line-height: 1.7;
+  overflow: visible;
+}
+
+.markdown-content h1 {
+  font-size: 2rem;
+  font-weight: bold;
+  margin: 2rem 0 1rem;
+  line-height: 1.3;
+  color: var(--text-color);
+}
+
+.markdown-content h2 {
+  font-size: 1.75rem;
+  font-weight: bold;
+  margin: 1.75rem 0 0.875rem;
+  line-height: 1.3;
+  color: var(--text-color);
+}
+
+.markdown-content h3 {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin: 1.5rem 0 0.75rem;
+  line-height: 1.3;
+  color: var(--text-color);
+}
+
+.markdown-content h4 {
+  font-size: 1.25rem;
+  font-weight: bold;
+  margin: 1.25rem 0 0.625rem;
+  line-height: 1.4;
+  color: var(--text-color);
+}
+
+.markdown-content h5 {
+  font-size: 1.125rem;
+  font-weight: bold;
+  margin: 1.125rem 0 0.5625rem;
+  line-height: 1.4;
+  color: var(--text-color);
+}
+
+.markdown-content h6 {
+  font-size: 1rem;
+  font-weight: bold;
+  margin: 1rem 0 0.5rem;
+  line-height: 1.4;
+  color: var(--text-color);
+}
+
+.markdown-content p {
+  margin: 1rem 0;
+  line-height: 1.7;
+}
+
+.markdown-content a {
+  color: #0066cc;
+  text-decoration: underline;
+  transition: color 0.2s;
+}
+
+.markdown-content a:hover {
+  color: #0052a3;
+}
+
+.markdown-content strong,
+.markdown-content b {
+  font-weight: bold;
+}
+
+.markdown-content em,
+.markdown-content i {
+  font-style: italic;
+}
+
+.markdown-content ul,
+.markdown-content ol {
+  margin: 1rem 0;
+  padding-left: 2rem;
+}
+
+.markdown-content ul {
+  list-style-type: disc;
+}
+
+.markdown-content ol {
+  list-style-type: decimal;
+}
+
+.markdown-content li {
+  margin: 0.5rem 0;
+  line-height: 1.7;
+}
+
+.markdown-content ul ul,
+.markdown-content ol ol,
+.markdown-content ul ol,
+.markdown-content ol ul {
+  margin: 0.25rem 0;
+}
+
+.markdown-content code {
+  background: var(--xx-thin-color);
+  color: var(--text-color);
+  padding: 0.2em 0.4em;
+  border-radius: var(--badge-border-radius);
+  font-family: monospace;
+  font-size: 0.9em;
+}
+
+.markdown-content pre {
+  background: var(--xx-thin-color);
+  padding: 1rem;
+  border-radius: var(--basic-border-radius);
+  overflow-x: auto;
+  margin: 1rem 0;
+  border: 1px solid var(--thin-color);
+}
+
+.markdown-content pre code {
+  background: transparent;
+  padding: 0;
+  border-radius: 0;
+  font-size: 0.875rem;
+}
+
+.markdown-content blockquote {
+  border-left: 4px solid var(--blue-gray-color);
+  padding-left: 1rem;
+  margin: 1rem 0;
+  color: var(--pallid-text-color);
+  font-style: italic;
+}
+
+.markdown-content blockquote p {
+  margin: 0.5rem 0;
+}
+
+.markdown-content table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1rem 0;
+  border: 1px solid var(--thin-color);
+}
+
+.markdown-content th,
+.markdown-content td {
+  padding: 0.75rem;
+  text-align: left;
+  border: 1px solid var(--thin-color);
+}
+
+.markdown-content th {
+  background: var(--xx-thin-color);
+  font-weight: bold;
+}
+
+.markdown-content tr:nth-child(even) {
+  background: var(--xxx-thin-color);
+}
+
+.markdown-content > p img,
+.markdown-content > img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 1.5rem auto;
+  border-radius: var(--basic-border-radius);
+}
+
+.markdown-content hr {
+  border: none;
+  border-top: 1px solid var(--thin-color);
+  margin: 2rem 0;
+}
+
+.markdown-content dl {
+  margin: 1rem 0;
+}
+
+.markdown-content dt {
+  font-weight: bold;
+  margin-top: 1rem;
+}
+
+.markdown-content dd {
+  margin-left: 2rem;
+  margin-top: 0.5rem;
+}
+
+.markdown-content li input[type="checkbox"] {
+  margin-right: 0.5rem;
+}
