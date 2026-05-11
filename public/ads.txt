@@ -932,5 +932,3 @@ admanmedia.com, 2063, RESELLER
 datawrkz.com, 2639, DIRECT
 appnexus.com, 2741, RESELLER, f5ab79cb980f11d1
 xandr.com, 2741, RESELLER, f5ab79cb980f11d1
-improvedigital.com, 1602_131106, DIRECT
-improvedigital.com, 1033_131106, DIRECT
