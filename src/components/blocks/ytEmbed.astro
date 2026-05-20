@@ -1,0 +1,23 @@
+---
+interface Props {
+    videoId: string;
+    title?: string;
+    params?: string;
+}
+
+const { videoId, title = "YouTube video", params = "" } = Astro.props;
+---
+
+<lite-youtube videoid={videoId} params={params}>
+    <a href={`https://youtube.com/watch?v=${videoId}`} class="lty-playbtn" title="Play Video">
+        <span class="lyt-visually-hidden">{title}</span>
+    </a>
+</lite-youtube>
+
+<style is:global>
+    @import "lite-youtube-embed/src/lite-yt-embed.css";
+</style>
+
+<script>
+    import "lite-youtube-embed";
+</script>

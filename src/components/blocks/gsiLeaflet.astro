@@ -1,0 +1,31 @@
+---
+import { Leaflet } from "astro-leaflet";
+
+interface Props {
+    lat: number;
+    lng: number;
+    zoom?: number;
+    markerText?: string;
+    mapType?: string
+}
+
+const { lat, lng, zoom = 15, markerText, mapType = "std" } = Astro.props;
+
+const markerOptions: any = { latlng: [lat, lng] };
+if (markerText) {
+    markerOptions.popup = markerText;
+}
+---
+
+<Leaflet
+        class={"z-0"}
+    options={{
+        center: [lat, lng],
+        zoom: zoom,
+        tileLayer: `https://cyberjapandata.gsi.go.jp/xyz/${mapType}/{z}/{x}/{y}.png`,
+        tileLayerOptions: {
+            attribution: "<a href='https://maps.gsi.go.jp/development/ichiran.html' target='_blank'>地理院タイル</a>",
+        },
+        markers: [markerOptions],
+    }}
+/>

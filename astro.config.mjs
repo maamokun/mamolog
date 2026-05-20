@@ -17,6 +17,9 @@ export default defineConfig({
   integrations: [pagefind(), icon(), mdx(), sitemap(), react()],
   vite: {
     plugins: [tailwindcss()],
+    optimizeDeps: {
+      include: ["astro-leaflet > leaflet"],
+    },
   },
   fonts: [
     {
