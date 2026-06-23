@@ -11,10 +11,10 @@
     "prepare": "husky"
   },
   "dependencies": {
-    "@astrojs/check": "^0.9.8",
-    "@astrojs/mdx": "^5.0.3",
-    "@astrojs/react": "^5.0.4",
-    "@astrojs/sitemap": "^3.7.2",
+    "@astrojs/check": "0.9.9",
+    "@astrojs/mdx": "7.0.0",
+    "@astrojs/react": "6.0.0",
+    "@astrojs/sitemap": "3.7.3",
     "@iconify-json/fa": "^1.2.2",
     "@iconify-json/fa-regular": "^1.2.2",
     "@iconify-json/fa-solid": "^1.2.2",
@@ -23,7 +23,7 @@
     "@tailwindcss/vite": "^4.2.2",
     "@types/react": "^19.2.14",
     "@types/react-dom": "^19.2.3",
-    "astro": "^6.1.8",
+    "astro": "7.0.0",
     "astro-icon": "^1.1.5",
     "astro-leaflet": "^1.11.0",
     "astro-pagefind": "^1.8.6",
