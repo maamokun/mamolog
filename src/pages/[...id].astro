@@ -8,10 +8,13 @@ import CreatorCard from "@/components/blocks/creatorCard.astro";
 import SidebarContent from "@/components/blocks/sidebarContent.astro";
 import MobileMenu from "@/components/navigation/mobileMenu";
 import { Icon } from "astro-icon/components";
+import { mdxComponents } from "@/components/mdxComponents";
+import { getPublishedPosts } from "@/lib/posts";
+import { coverSrc } from "@/lib/image";
 
-import { getCollection, render } from 'astro:content';
+import { render } from 'astro:content';
 export async function getStaticPaths() {
-    const posts = await getCollection('blog');
+    const posts = await getPublishedPosts();
     return posts.map(post => ({
         params: { id: post.id },
         props: { post },
@@ -21,7 +24,7 @@ export async function getStaticPaths() {
 const { post } = Astro.props;
 const { Content } = await render(post);
 
-const allPosts = await getCollection('blog');
+const allPosts = await getPublishedPosts();
 const recentPosts = allPosts
     .filter(p => p.id !== post.id)
     .sort((a, b) => b.data.date.getTime() - a.data.date.getTime())
@@ -30,7 +33,7 @@ const recentPosts = allPosts
 <Layout
     title={post.data.title}
     description={post.data.description}
-    image={post.data.coverImage}
+    image={coverSrc(post.data.coverImage)}
     url={Astro.url.pathname}
 >
 <div class="flex flex-row justify-center items-stretch w-full md:w-2/3 min-h-screen mx-auto md:space-x-5 py-5">
@@ -44,7 +47,7 @@ const recentPosts = allPosts
         </div>
         <TimeToRead minutes={post.data.timeToRead} />
         <div class="markdown-content">
-            <Content/>
+            <Content components={mdxComponents} />
         </div>
         {post.data.creator && (
             <div class="mt-8">

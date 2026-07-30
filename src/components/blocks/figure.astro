@@ -1,0 +1,28 @@
+---
+import { tv, type VariantProps } from "tailwind-variants/lite";
+
+interface Props extends VariantProps<typeof figure> {
+    caption?: string;
+}
+
+const { size = "half", caption } = Astro.props;
+
+const figure = tv({
+    base: "flex flex-col items-center justify-center mb-5 [&_p]:contents [&_img]:h-auto",
+    variants: {
+        size: {
+            half: "[&_img]:w-11/12 md:[&_img]:w-1/2",
+            third: "[&_img]:w-11/12 md:[&_img]:w-1/3",
+            full: "[&_img]:w-full",
+        },
+    },
+    defaultVariants: {
+        size: "half",
+    },
+});
+---
+
+<div class={figure({ size })}>
+    <slot />
+    {caption && <span>{caption}</span>}
+</div>

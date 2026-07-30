@@ -1,0 +1,29 @@
+---
+import { tv, type VariantProps } from "tailwind-variants/lite";
+
+interface Props extends VariantProps<typeof grid> {
+    caption?: string;
+}
+
+const { cols = "2", caption } = Astro.props;
+
+const grid = tv({
+    base: "grid grid-cols-1 items-center justify-center [&_p]:contents [&_img]:w-full [&_img]:h-auto",
+    variants: {
+        cols: {
+            "2": "md:grid-cols-2",
+            "3": "md:grid-cols-3",
+        },
+    },
+    defaultVariants: {
+        cols: "2",
+    },
+});
+---
+
+<div class="flex flex-col items-center justify-center">
+    <div class={grid({ cols })}>
+        <slot />
+    </div>
+    {caption && <span>{caption}</span>}
+</div>

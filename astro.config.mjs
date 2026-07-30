@@ -16,6 +16,20 @@ export default defineConfig({
   site: "https://log.mamomamo.live",
   integrations: [pagefind(), icon(), mdx(), sitemap(), react()],
   vite: {
+    server: {
+      watch: {
+        ignored: [
+          "**/.obsidian/**",
+          "**/_bases/**",
+          "**/bases/**",
+          "**/_home/**",
+          "**/home/**",
+          "**/_base/**",
+          "**/base/**",
+        ],
+      },
+    },
+    assetsInclude: ["**/*.base", "**/.obsidian/**", "**/_bases/**"],
     plugins: [tailwindcss()],
     optimizeDeps: {
       include: ["astro-leaflet > leaflet"],
@@ -28,4 +42,10 @@ export default defineConfig({
       cssVariable: "--font-noto-sans-jp",
     },
   ],
+  redirects: {
+    "/ise": "/posts/ise",
+    "/nagoya": "/posts/nagoya",
+    "/start-blog": "/posts/start-blog",
+    "/fav-places/sumaura-park": "/posts/fav-places/sumaura-park",
+  },
 });

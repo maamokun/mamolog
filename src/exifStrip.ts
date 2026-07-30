@@ -51,7 +51,11 @@ async function stripExifFromImage(filePath: string): Promise<void> {
 }
 
 async function main() {
-  const directories = [join(process.cwd(), "public"), join(process.cwd(), "src", "assets")];
+  const directories = [
+    join(process.cwd(), "public"),
+    join(process.cwd(), "src", "assets"),
+    join(process.cwd(), "src", "content", "assets"),
+  ];
 
   let allImageFiles: string[] = [];
 

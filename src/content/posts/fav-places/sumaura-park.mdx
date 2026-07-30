@@ -2,39 +2,11 @@
 title: すきなとこ：須磨浦山上遊園
 description: 昭和レトロな雰囲気と面白い乗り物があるので時々行ってます。その乗り場についても色々調べてみた。
 date: 2026-05-20
-coverImage: /img/cover/sumaura-park.png
+coverImage: ../../assets/img/cover/sumaura-park.png
 tags: [旅行, すきなとこ, 公園, 昭和レトロ]
 timeToRead: 1145141919810
 creator: mmmm
 ---
-
-import GsiLeaflet from "@/components/blocks/gsiLeaflet.astro";
-import YtEmbed from "@/components/blocks/ytEmbed.astro";
-import IconBox from "@/components/blocks/iconBox.astro";
-import { Image } from "astro:assets";
-
-import bottomTicket from "@/assets/img/sumaura-park/bottom-ticket.png";
-import gondola from "@/assets/img/sumaura-park/gondola.png";
-import carlatorBottom from "@/assets/img/sumaura-park/carlator-bottom.png";
-import carlatorIllust from "@/assets/img/sumaura-park/carlator-illust.png";
-import carlatorTunnel from "@/assets/img/sumaura-park/carlator-tunnel.png";
-import carlatorConveyor from "@/assets/img/sumaura-park/carlator-conveyor.png";
-import pano1 from "@/assets/img/sumaura-park/pano1.png";
-import pano2 from "@/assets/img/sumaura-park/pano2.png";
-import pano3 from "@/assets/img/sumaura-park/pano3.png";
-import carlatorTunnelOuter from "@/assets/img/sumaura-park/carlator-tunnel-outer.png";
-import liftUpper1 from "@/assets/img/sumaura-park/lift-upper-1.png";
-import liftUpper2 from "@/assets/img/sumaura-park/lift-upper-2.png";
-import liftNoriba from "@/assets/img/sumaura-park/lift-noriba.png";
-import liftGondola1 from "@/assets/img/sumaura-park/lift-gondola-1.png";
-import liftGondola2 from "@/assets/img/sumaura-park/lift-gondola-2.png";
-import liftHazama from "@/assets/img/sumaura-park/lift-hazama.png";
-import niceFlowers from "@/assets/img/sumaura-park/nice-flowers.png";
-import cycleMonorail1 from "@/assets/img/sumaura-park/cycle-monorail-1.png";
-import cycleMonorail2 from "@/assets/img/sumaura-park/cycle-monorail-2.png";
-import carlatorPoster from "@/assets/img/sumaura-park/carlator-poster.png";
-import oldCarlatorAerial from "@/assets/img/sumaura-park/old-carlator-aerial.png";
-import oldCarlatorAerialLine from "@/assets/img/sumaura-park/old-carlator-aerial-line.png";
 
 今日からこのブログでは、シリーズものの記事として「すきなとこ」を作ってみました。
 ここでは、私が個人的に好きで時々行ってみたくなる所を紹介してみたいと思います。毎回書く記事がこれになる訳ではないけど、気分次第で書いていきたいと思います。
@@ -69,112 +41,125 @@ import oldCarlatorAerialLine from "@/assets/img/sumaura-park/old-carlator-aerial
 
 ロープウェイの駅は山陽電鉄須磨浦公園駅の改札出てすぐのとこにある。まずは、駅出たところのチケット売り場でロープウェイの券を買ってから階段でゴンドラの乗り場まで上がっていく。
 
-<div class={"flex flex-col items-center justify-center"}>
-  <div class={"grid grid-cols-1 md:grid-cols-2 items-center justify-center"}>
-    <Image src={bottomTicket} alt={"bottom ticket"} class={"w-full"} />
-    <Image src={gondola} alt={"gondola"} class={"w-full"} />
-  </div>
-  <span>ロープウェイ乗車券とゴンドラの様子。</span>
-</div>
+<ImageGrid cols="2" caption="ロープウェイ乗車券とゴンドラの様子。">
+
+![bottom ticket](../../assets/img/sumaura-park/bottom-ticket.png)
+
+![gondola](../../assets/img/sumaura-park/gondola.png)
+
+</ImageGrid>
 
 ロープウェイは、公園と駅の間の中環駅ぐらいで止まる。そこから、ここの公園自慢のカーレーターに乗って一番上の公園のところまで上がります。今ではこの乗り物がまだある場所はここしかなく、私が行った時（2026年3月）はカーレーター60周年記念の飾りがされていました。
 こんな珍しい乗り物を60年維持できるのって本当にすごいと思う。元々製造した会社は絶対に今はないのにメンテナンスを続けて今でも楽しめるようにしてる運営には感謝しかない。
 
-<div class={"flex flex-col items-center justify-center"}>
-  <Image src={carlatorBottom} alt={"carlator bottom"} class={"w-11/12 md:w-1/3"} />
-  <span>カーレーターの乗り場（下階）の様子。「60周年」の旗がゴンドラに飾ってあった。</span>
-</div>
+<Figure size="third" caption="カーレーターの乗り場（下階）の様子。「60周年」の旗がゴンドラに飾ってあった。">
+
+![carlator bottom](../../assets/img/sumaura-park/carlator-bottom.png)
+
+</Figure>
 
 カーレーターはガタガタして「乗り心地が悪い」と言われていますが（公園の運営自身がもはやそう言ってる）実際傾斜の所はあまり気になりません。登り初めと終わりのローラーからベルトコンベアへ変わる部分はめちゃくちゃガタガタしますけどね。
 
-<div class={"flex flex-col items-center justify-center"}>
-  <Image src={carlatorIllust} alt={"carlator drawing"} class={"w-11/12 md:w-1/2"} />
-  <span>
-    ベルトコンベアは曲がることはできないから、乗り場の踊り場はローラーコンベアで動く仕様。そこの変更地点でめちゃくちゃ揺れる。
-  </span>
-</div>
+<Figure size="half" caption="ベルトコンベアは曲がることはできないから、乗り場の踊り場はローラーコンベアで動く仕様。そこの変更地点でめちゃくちゃ揺れる。">
+
+![carlator drawing](../../assets/img/sumaura-park/carlator-illust.png)
+
+</Figure>
 
 ゆっくりと上まで登っていって、とりあえず無事に山上遊園に着きました！
 
-<div class={"flex flex-col items-center justify-center"}>
-  <Image src={carlatorConveyor} alt={"carlator conveyor"} class={"w-11/12 md:w-1/2"} />
-  <span>登っていくコンベヤに乗ってる時の様子。そこそこですね（急斜面）</span>
-</div>
+<Figure size="half" caption="登っていくコンベヤに乗ってる時の様子。そこそこですね（急斜面）">
 
-<div class={"flex flex-col items-center justify-center"}>
-  <Image src={carlatorTunnel} alt={"carlator tunnel inside"} class={"w-11/12 md:w-1/2"} />
-  <span>通るトンネルみたいなやつは窓がある。</span>
-</div>
+![carlator conveyor](../../assets/img/sumaura-park/carlator-conveyor.png)
+
+</Figure>
+
+<Figure size="half" caption="通るトンネルみたいなやつは窓がある。">
+
+![carlator tunnel inside](../../assets/img/sumaura-park/carlator-tunnel.png)
+
+</Figure>
 
 ## 山上遊園（前半）
 
 山上遊園自体は2つに分かれていて、観光リフトでつながっています。カーレーター乗り場がある方は、展望台と回転レストランがありました。ここは主に景色を楽しむ場所ですね。
 淡路島も近いので、明石海峡大橋も見れる。ここはとりあえず写真をいっぱい撮りました。神戸の都会もよく見れます。
 
-<div class={"grid grid-cols-1 md:grid-cols-3 items-center justify-center"}>
-  <Image src={pano1} alt={"pano 1"} class={"w-full"} />
-  <Image src={pano2} alt={"pano 2"} class={"w-full"} />
-  <Image src={pano3} alt={"pano 3"} class={"w-full"} />
-</div>
+<ImageGrid cols="3">
 
-<div class={"flex flex-col items-center justify-center"}>
-  <Image src={carlatorTunnelOuter} alt={"carlator tunnel outer"} class={"w-11/12 md:w-1/2"} />
-  <span>外から見たカーレーターのトンネル。</span>
-</div>
+![pano 1](../../assets/img/sumaura-park/pano1.png)
+
+![pano 2](../../assets/img/sumaura-park/pano2.png)
+
+![pano 3](../../assets/img/sumaura-park/pano3.png)
+
+</ImageGrid>
+
+<Figure size="half" caption="外から見たカーレーターのトンネル。">
+
+![carlator tunnel outer](../../assets/img/sumaura-park/carlator-tunnel-outer.png)
+
+</Figure>
 
 ## 観光リフト
 
 須磨浦山上遊園は、「はりまのくに」と「せっつのくに」の2つに分かれています。まぁ簡単に言うと2つの山に分かれていて谷間があるってことですね。
 そこを結ぶのがスキーリフトみたいな観光リフトです。これもまた乗り場から乗り物まで超レトロな雰囲気ですね。
 
-<div class={"flex flex-col items-center justify-center"}>
-  <div class={"grid grid-cols-1 md:grid-cols-2 items-center justify-center"}>
-    <Image src={liftUpper1} alt={"lift upper 1"} class={"w-full"} />
-    <Image src={liftUpper2} alt={"lift upper 2"} class={"w-full"} />
-  </div>
-  <span>まずは先程の展望台からみた様子。</span>
-</div>
+<ImageGrid cols="2" caption="まずは先程の展望台からみた様子。">
 
-<div class={"flex flex-col items-center justify-center"}>
-  <Image src={liftNoriba} alt={"lift platform"} class={"w-11/12 md:w-1/2"} />
-  <span>乗り場の様子。これも建設時から変わってなさそう。</span>
-</div>
+![lift upper 1](../../assets/img/sumaura-park/lift-upper-1.png)
+
+![lift upper 2](../../assets/img/sumaura-park/lift-upper-2.png)
+
+</ImageGrid>
+
+<Figure size="half" caption="乗り場の様子。これも建設時から変わってなさそう。">
+
+![lift platform](../../assets/img/sumaura-park/lift-noriba.png)
+
+</Figure>
 
 ゴンドラはすごくカラフルで、かわいいです。
 
-<div class={"flex flex-col items-center justify-center"}>
-  <div class={"grid grid-cols-1 md:grid-cols-2 items-center justify-center"}>
-    <Image src={liftGondola1} alt={"lift gondola 1"} class={"w-full"} />
-    <Image src={liftGondola2} alt={"lift gondola 2"} class={"w-full"} />
-  </div>
-</div>
+<ImageGrid cols="2">
 
-<div class={"flex flex-col items-center justify-center"}>
-  <Image src={liftHazama} alt={"lift hazama"} class={"w-11/12 md:w-1/2"} />
-  <span>ちょうど中間点でこんな目印がある。</span>
-</div>
+![lift gondola 1](../../assets/img/sumaura-park/lift-gondola-1.png)
+
+![lift gondola 2](../../assets/img/sumaura-park/lift-gondola-2.png)
+
+</ImageGrid>
+
+<Figure size="half" caption="ちょうど中間点でこんな目印がある。">
+
+![lift hazama](../../assets/img/sumaura-park/lift-hazama.png)
+
+</Figure>
 
 ## 山上遊園（後半）
 
 観光リフトを降りた「はりまのくに」の方には、遊具や花園とか色々ありました。昔は噴水があったらしいですが、現在はそれが撤去されていて代わりにその跡地を使った「ふんすいパーク」
 がありました。綺麗な花が咲いている木もいっぱいありました。
 
-<div class={"flex flex-col items-center justify-center"}>
-  <Image src={niceFlowers} alt={"nice flowers"} class={"w-11/12 md:w-1/2"} />
-  <span>なんかかわいい花。何の花でしょう？俺は分かりません。</span>
-</div>
+<Figure size="half" caption="なんかかわいい花。何の花でしょう？俺は分かりません。">
+
+![nice flowers](../../assets/img/sumaura-park/nice-flowers.png)
+
+</Figure>
 
 遊具は、ミニカーとサイクルモノレールがありました。親と一緒に言ってたので、二人でサイクルモノレールに乗ってみました。
 
-<div class={"flex flex-col items-center justify-center"}>
-  <Image src={cycleMonorail1} alt={"cycle monorail 1"} class={"w-11/12 md:w-1/2"} />
-  <span>二人でこぎこぎしてゆっくりと進んでいくのでした。</span>
-</div>
+<Figure size="half" caption="二人でこぎこぎしてゆっくりと進んでいくのでした。">
 
-<div class={"flex flex-col items-center justify-center"}>
-  <Image src={cycleMonorail2} alt={"cycle monorail 2"} class={"w-11/12 md:w-1/2"} />
-  <span>カーブする所に電波塔がありました。</span>
-</div>
+![cycle monorail 1](../../assets/img/sumaura-park/cycle-monorail-1.png)
+
+</Figure>
+
+<Figure size="half" caption="カーブする所に電波塔がありました。">
+
+![cycle monorail 2](../../assets/img/sumaura-park/cycle-monorail-2.png)
+
+</Figure>
 
 遊園自体はこういう感じでした。もちろんテーマパークとかと比べるとショボいけど、自然やレトロな雰囲気がすごくいい味を出していると思いました。
 
@@ -183,24 +168,22 @@ import oldCarlatorAerialLine from "@/assets/img/sumaura-park/old-carlator-aerial
 カーレーター自体は、現存して実際乗れるのはここの須磨浦公園だけだと言われています。昔はもっとあったのかな？と思ってちょっと調べてみました。
 まず、公園のカーレーター乗り場にこんな張り紙がありました。
 
-<div class={"flex flex-col items-center justify-center"}>
-  <Image src={carlatorPoster} alt={"carlator poster"} class={"w-11/12 md:w-1/2"} />
-</div>
+<Figure size="half">
+
+![carlator poster](../../assets/img/sumaura-park/carlator-poster.png)
+
+</Figure>
 
 昔一回びわ湖バレイに行ったことあったんですが、その時はロープウェイで山上まで行きました。日本で一番高速なロープウェイでも10分ぐらいかかったので、まさかその距離を行くカーレーター
 が昔あったのはびっくりしました。調べた所、地上から山上まで20分ぐらいかかったそうです。
 
-<div class={"flex flex-col items-center justify-center"}>
-  <div class={"grid grid-cols-1 md:grid-cols-2 items-center justify-center"}>
-    <Image src={oldCarlatorAerial} alt={"old carlator aerial photo"} class={"w-full"} />
-    <Image
-      src={oldCarlatorAerialLine}
-      alt={"old carlator aerial photo with line"}
-      class={"w-full"}
-    />
-  </div>
-  <span>当時（1970年頃）の衛星写真。提供：国土地理院</span>
-</div>
+<ImageGrid cols="2" caption="当時（1970年頃）の衛星写真。提供：国土地理院">
+
+![old carlator aerial photo](../../assets/img/sumaura-park/old-carlator-aerial.png)
+
+![old carlator aerial photo with line](../../assets/img/sumaura-park/old-carlator-aerial-line.png)
+
+</ImageGrid>
 
 須磨浦公園のは2分乗るだけなので乗り心地悪くてもまぁ面白いからいいってなると思うけど、
 流石に20分もずっとゆっくりガタガタ乗るのは飽きてくる人も出てくるだろうなと思いました。私も一回体験してみたかったなぁとおもいましたが、やはり昔もあまり人気なかったんだろうか、

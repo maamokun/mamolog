@@ -4,6 +4,7 @@ import TabBadge from "@/components/primitives/tabBadge.astro";
 import { Icon } from "astro-icon/components";
 import { getEntry } from "astro:content";
 import { fetchExternalMetadata } from "@/lib/fetchUrlData";
+import { coverSrc } from "@/lib/image";
 
 interface Props {
     url: string,
@@ -39,11 +40,11 @@ if (isExternalUrl) {
         entry = null;
     }
 
-    if (entry) {
+    if (entry && !(import.meta.env.PROD && entry.data.draft)) {
         isInternal = true;
         title = entry.data.title;
         description = entry.data.description;
-        coverImage = entry.data.coverImage;
+        coverImage = coverSrc(entry.data.coverImage);
         date = entry.data.date;
         hostname = Astro.site?.hostname || "localhost";
         favicon = "/favicon.ico";

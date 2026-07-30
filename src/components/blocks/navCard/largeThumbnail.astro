@@ -1,6 +1,7 @@
 ---
 import NavCardLargeThumbnail from "@/components/primitives/navCard/largeThumbnail.astro";
 import { getEntry } from "astro:content";
+import { coverSrc } from "@/lib/image";
 
 interface Props {
     id: string;
@@ -19,15 +20,18 @@ if (!entry) {
     throw new Error(`Blog post with id "${id}" not found`);
 }
 
+const isDraft = import.meta.env.PROD && entry.data.draft;
 const title = entry.data.title;
 const description = entry.data.description;
-const coverImage = entry.data.coverImage;
+const coverImage = coverSrc(entry.data.coverImage);
 const url = `/${id}`;
 ---
 
-<NavCardLargeThumbnail
-    url={url}
-    title={title}
-    description={description}
-    coverImage={coverImage}
-/>
+{!isDraft && (
+    <NavCardLargeThumbnail
+        url={url}
+        title={title}
+        description={description}
+        coverImage={coverImage}
+    />
+)}

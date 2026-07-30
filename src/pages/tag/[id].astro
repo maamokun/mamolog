@@ -4,10 +4,10 @@ import BlogCard from "@/components/blocks/blogCard.astro";
 import SidebarContent from "@/components/blocks/sidebarContent.astro";
 import MobileMenu from "@/components/navigation/mobileMenu";
 import { Icon } from "astro-icon/components";
-import { getCollection } from 'astro:content';
+import { getPublishedPosts } from "@/lib/posts";
 
 export async function getStaticPaths() {
-    const allPosts = await getCollection('blog');
+    const allPosts = await getPublishedPosts();
 
     const uniqueTags = [...new Set(allPosts.flatMap(post => post.data.tags || []))];
 
@@ -19,7 +19,7 @@ export async function getStaticPaths() {
 
 const { tag } = Astro.props;
 
-const allPosts = await getCollection('blog');
+const allPosts = await getPublishedPosts();
 const tagPosts = allPosts
     .filter(post => post.data.tags?.includes(tag))
     .sort((a, b) => b.data.date.getTime() - a.data.date.getTime());
